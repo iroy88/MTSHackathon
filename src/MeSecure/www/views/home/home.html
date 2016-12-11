@@ -1,0 +1,30 @@
+<ion-view ng-init="test()">
+  <ion-nav-title>Secure Me <i class="icon ion-ios-location"></i></ion-nav-title>
+  <ion-content padding="true">
+    <br>
+    <form name="form.userdata">
+      <div class="ion-list">
+        <div class="list">
+          <label class="item item-input">
+            <span  color="primary" class="input-label">Parent's Contact</span>
+          <input type="tel" placeholder="Parent's Contact">
+        </label>
+          <label class="item item-input">
+            <span color="primary" class="input-label">Manager's Contact</span>
+         <input type="tel" placeholder="Manager's Contact">
+       </label>
+          <label class="item item-input">
+            <span  color="primary" class="input-label">Manager's Email</span>
+            <input type="email" placeholder="Manager's Email"></input>
+        </label>
+      <label class="item item-input">
+            <span  color="primary" class="input-label">Your Address</span>
+            <input id="pac-input" type="text" placeholder="Your address"></input>
+        </label>
+        <div id="map"></div> 
+        </div>
+      </div>
+      <button class="button button-balanced button-block"><b>Save</b></button>
+    </form>
+  </ion-content>
+</ion-view>
