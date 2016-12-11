@@ -1,0 +1,39 @@
+<ion-view>
+  <ion-nav-title>Secure Me <i class="icon ion-ios-location"></i></ion-nav-title>
+  <ion-content padding="true">
+    <br>
+    <form name="form.userdata">
+      <div class="ion-list">
+        <div class="list">
+            <label class="item item-input">
+            <i class="icon ion-paper-airplane placeholder-icon"></i>
+            <span  color="primary" class="input-label">Name</span>
+          <input type="tel" placeholder="Name" ng-model="Userdata.username">
+        </label>
+          <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+            <span  color="primary" class="input-label">Home Address</span>            
+            <input id="my-address" type="text" placeholder="Home Address">
+        </label>
+          <label class="item item-input">
+            <i class="icon ion-home placeholder-icon"></i>
+            <span  color="primary" class="input-label">Parent's Contact</span>
+          <input type="tel" placeholder="Parent's Contact" ng-model="Userdata.parentContact">
+        </label>
+          <label class="item item-input">
+            <i class="icon ion-iphone placeholder-icon"></i>
+            <span color="primary" class="input-label">Manager's Contact</span>
+         <input type="tel" placeholder="Manager's Contact" ng-model="Userdata.managerContact">
+       </label>
+          <label class="item item-input">
+            <i class="icon ion-email placeholder-icon"></i>
+            <span  color="primary" class="input-label">Manager's Email</span>
+            <input type="email" placeholder="Manager's Email" ng-model="Userdata.managerEmail">
+        </label> 
+        <button id="getCords" class="button button-balanced button-block" ng-click="Save()">save</button>       
+           <!--<button id="getCords" class="button button-balanced button-block" onclick="savedata();" ><b>Save</b></button>-->
+        </div>
+      </div>     
+    </form>
+  </ion-content>
+</ion-view>

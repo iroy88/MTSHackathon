@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/ngCordova/dist/ng-cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+        <script type="text/javascript">
+        function initialize() {
+        var address = (document.getElementById('my-address'));
+        var autocomplete = new google.maps.places.Autocomplete(address);
+        autocomplete.setTypes(['geocode']);
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                return;
+            }
+
+        var address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+        }
+      });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+    <script src="views/home/home.js"></script>
+    <script src="views/contactDetails/contacts.js"></script>
+  </head>
+  <body ng-app="App">
+
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-clear">
+        <i class="icon ion-ios-arrow-left"></i> Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>
+<ion-tabs class="tabs-positive tabs-icon-top">
+
+  <ion-tab title="Home" icon="ion-home"href="/home">
+    <!-- Tab 1 content -->
+  </ion-tab>
+
+  <ion-tab title="About" icon="ion-ios-clock-outline" href="">
+    <!-- Tab 2 content -->
+  </ion-tab>
+
+  <ion-tab title="Contact" icon="ion-ios-gear-outline" href="/contacts">
+    <!-- Tab 3 content -->
+  </ion-tab>
+
+</ion-tabs>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<ion-view ng-init="checkLocation()">
+  <ion-nav-title>Secure Me <i class="icon ion-ios-location"></i></ion-nav-title>
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-location placeholder-icon"></i>
+            <span  color="primary" class="input-label">Current Address</span> 
+              <span ng-bind="currentloc" ng-model="data.userlocation" style="height:30px"> 
+          </label>
+      </div>
+      <button class="button button-block button-calm" ng-click="Starttracking()">Start Track</button>
+  </ion-content>
+</ion-view>
